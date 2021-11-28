@@ -1,56 +1,72 @@
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
-int main()
+std::string PhoneBook::turnc(std::string str)
 {
-    Phonebook book;
-    std::string cmd;
-    int count = 0;
-    int i = 0;
-    int index;
+	std::string str2 = str;
 
-    while (1)
-    {
-        std::cout << "Enter a command : ";
-        std::cin >> cmd;
-        if (cmd.compare("ADD") == 0)
-        {
-            
-            std::cout << "first name : ";
-            std::cin >> book.contact[i].f_name;
+	if (str2.size() > 10)
+	{
+		str2 = str.substr(0, 9);
+		str2 += '.';
+	}
+	return (str2);
 
-            std::cout << "last name : ";
-            std::cin >> book.contact[i].l_name;
+}
 
-            std::cout << "Nickname : ";
-            std::cin >> book.contact[i].nickname;
+void PhoneBook::list_contacts()
+{
+	int i = 0;
+	if (_contactNum == 0)
+	{
+		std::cout << "No contact added yet!" << std::endl;
+		return;
+	}
+	std::cout << "|" << std::left << std::setw(10) << "index" << "|" << std::setw(10) << "First name" << "|" << std::setw(10) << "Last name" << "|" << std::setw(10) << "Nickname" << "|" << std::endl;
+	std::cout << std::setfill ('-');
+	std::cout << "|" << std::setw (10) << "-" << "+" << std::setw (10) << "-" << "+" << std::setw (10) << "-" << "+" << std::setw (10) << "-" << "|";
+	std::cout << std::setfill (' ') << std::endl;
+	while (i < _contactNum)
+	{
+		std::cout << "|" << std::left << std::setw(10) << i << "|" << std::setw(10) << turnc(contact[i].get_firstName()) << "|" << std::setw(10) << turnc(contact[i].get_lastName()) << "|" << std::setw(10) << turnc(contact[i].get_nickname()) << "|" << std::endl;
+		i++;
+	}
+	show_contact();
+}
 
-            std::cout << "phone number : ";
-            std::cin >> book.contact[i].number;
+void PhoneBook::show_contact()
+{
+	int i;
+	std::cout << "Enter an index : ";
+	std::cin >> i;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	if (i > 8 || i < 0 || i > _contactNum || _contactNum == 0)
+		std::cout << "Not a valid index!" << std::endl;
+	else
+	{
+		std::cout << std::left << std::setw(20) << "First name" << ":" << contact[i].get_firstName() << std::endl;
+		std::cout << std::left << std::setw(20) << "Last name" << ":" << contact[i].get_lastName() << std::endl;
+		std::cout << std::left << std::setw(20) << "Nickname" << ":" << contact[i].get_nickname() << std::endl;
+		std::cout << std::left << std::setw(20) << "Phone number" << ":" << contact[i].get_number() << std::endl;
+		std::cout << std::left << std::setw(20) << "Darkest secret" << ":" << contact[i].get_secret() << std::endl;
+	}
+}
 
-            std::cout << "Darkest secret : ";
-            std::cin >> book.contact[i].secret;
-            
-            std::cout << "contact added!" << std::endl;
-            i++;
-            count++;
-            if (i == 8)
-                i = 0;
-        }
-        else if (cmd.compare("SEARCH") == 0)
-        {
-            std::cout << "typed search\n";
-            if (count > 8)
-                count = 8;
-            book.list_contacts(count);
-            std::cout << "Enter an index : ";
-            std::cin >> index;
-            while ()
+void PhoneBook::add_contact()
+{
+	contact[_contactID].set_firstName();
 
-        }
-        else if (cmd.compare("EXIT") == 0)
-            break;
-    }
+	contact[_contactID].set_lastName();
 
-    std::cout << "The program exited\n";
+	contact[_contactID].set_nickname();
 
+	contact[_contactID].set_number();
+
+	contact[_contactID].set_secret();
+
+	std::cout << "contact added!" << std::endl;
+	_contactID++;
+	if (_contactID == 8)
+		_contactID = 0;
+	if (_contactNum < 8)
+		_contactNum++;
 }
