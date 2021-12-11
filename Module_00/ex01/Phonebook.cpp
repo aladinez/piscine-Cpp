@@ -31,15 +31,17 @@ void PhoneBook::list_contacts()
 		i++;
 	}
 	show_contact();
+	std::cin.ignore();
 }
 
 void PhoneBook::show_contact()
 {
-	int i;
+	int i = -1;
 	std::cout << "Enter an index : ";
 	std::cin >> i;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	if (i > 8 || i < 0 || i > _contactNum || _contactNum == 0)
+	// std::cin.ignore(std::numeric_limits<std::streamsize>::max());
+	
+	if (i > 8 || i < 0 || i >= _contactNum || _contactNum == 0)
 		std::cout << "Not a valid index!" << std::endl;
 	else
 	{
