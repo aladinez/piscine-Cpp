@@ -8,9 +8,7 @@ int main()
 
 	while (looper)
 	{
-		// std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Enter a command : ";
-		std::cin >> cmd;
 		std::getline(std::cin, cmd);
 		if (cmd.compare("ADD") == 0)
 			book.add_contact();
@@ -18,7 +16,6 @@ int main()
 			book.list_contacts();
 		else if (cmd.compare("EXIT") == 0)
 			looper = 0;
-		// cmd = "";
 	}
 	std::cout << "The program exited" << std::endl;
 }

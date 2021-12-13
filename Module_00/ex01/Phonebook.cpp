@@ -16,7 +16,7 @@ std::string PhoneBook::turnc(std::string str)
 void PhoneBook::list_contacts()
 {
 	int i = 0;
-	if (_contactNum == 0)
+	if (_contactID == 0)
 	{
 		std::cout << "No contact added yet!" << std::endl;
 		return;
@@ -25,23 +25,26 @@ void PhoneBook::list_contacts()
 	std::cout << std::setfill ('-');
 	std::cout << "|" << std::setw (10) << "-" << "+" << std::setw (10) << "-" << "+" << std::setw (10) << "-" << "+" << std::setw (10) << "-" << "|";
 	std::cout << std::setfill (' ') << std::endl;
-	while (i < _contactNum)
+	while (i < _contactID)
 	{
 		std::cout << "|" << std::left << std::setw(10) << i << "|" << std::setw(10) << turnc(contact[i].get_firstName()) << "|" << std::setw(10) << turnc(contact[i].get_lastName()) << "|" << std::setw(10) << turnc(contact[i].get_nickname()) << "|" << std::endl;
 		i++;
 	}
 	show_contact();
-	std::cin.ignore();
 }
 
 void PhoneBook::show_contact()
 {
-	int i = -1;
+	int i;
+	std::string cmd = "";
 	std::cout << "Enter an index : ";
-	std::cin >> i;
-	// std::cin.ignore(std::numeric_limits<std::streamsize>::max());
-	
-	if (i > 8 || i < 0 || i >= _contactNum || _contactNum == 0)
+	std::getline(std::cin, cmd);
+	std::stringstream my_stream(cmd);
+	my_stream >> i;
+	my_stream.str("");
+	my_stream.clear();
+
+	if (i > 8 || i < 0 || i >= _contactID || _contactID == 0 || cmd.length() > 1 || !std::isdigit(cmd[0]))
 		std::cout << "Not a valid index!" << std::endl;
 	else
 	{
@@ -55,20 +58,18 @@ void PhoneBook::show_contact()
 
 void PhoneBook::add_contact()
 {
+	if (_contactID == 8)
+	{
+		for (int i = 0; i < _contactID; i++)
+			contact[i] = contact[i + 1];
+		_contactID--;
+	}
 	contact[_contactID].set_firstName();
-
 	contact[_contactID].set_lastName();
-
 	contact[_contactID].set_nickname();
-
 	contact[_contactID].set_number();
-
 	contact[_contactID].set_secret();
 
 	std::cout << "contact added!" << std::endl;
 	_contactID++;
-	if (_contactID == 8)
-		_contactID = 0;
-	if (_contactNum < 8)
-		_contactNum++;
 }
