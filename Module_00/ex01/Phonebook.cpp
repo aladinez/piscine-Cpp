@@ -27,7 +27,7 @@ void PhoneBook::list_contacts()
 	std::cout << std::setfill (' ') << std::endl;
 	while (i < _contactID)
 	{
-		std::cout << "|" << std::left << std::setw(10) << i << "|" << std::setw(10) << turnc(contact[i].get_firstName()) << "|" << std::setw(10) << turnc(contact[i].get_lastName()) << "|" << std::setw(10) << turnc(contact[i].get_nickname()) << "|" << std::endl;
+		std::cout << "|" << std::left << std::setw(10) << i + 1 << "|" << std::setw(10) << turnc(contact[i].get_firstName()) << "|" << std::setw(10) << turnc(contact[i].get_lastName()) << "|" << std::setw(10) << turnc(contact[i].get_nickname()) << "|" << std::endl;
 		i++;
 	}
 	show_contact();
@@ -43,7 +43,7 @@ void PhoneBook::show_contact()
 	my_stream >> i;
 	my_stream.str("");
 	my_stream.clear();
-
+	i--;
 	if (i > 8 || i < 0 || i >= _contactID || _contactID == 0 || cmd.length() > 1 || !std::isdigit(cmd[0]))
 		std::cout << "Not a valid index!" << std::endl;
 	else
@@ -60,7 +60,7 @@ void PhoneBook::add_contact()
 {
 	if (_contactID == 8)
 	{
-		for (int i = 0; i < _contactID; i++)
+		for (int i = 0; i < _contactID-1; i++)
 			contact[i] = contact[i + 1];
 		_contactID--;
 	}
