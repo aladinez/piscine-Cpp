@@ -4,8 +4,13 @@ Zombie* zombieHorde( int N, std::string name );
 
 int main()
 {
-    Zombie *zombie = zombieHorde(3, "youssef");
-    // zombie[0].announce();
-    // zombie[1].announce();
+    int N = 3;
+    Zombie *zombie = zombieHorde(N, "youssef");
+    
+    for (int i = 0; i < N; i++)
+    {
+        zombie[i].announce();
+    }
     delete [] zombie ;
+    return 0;
 }

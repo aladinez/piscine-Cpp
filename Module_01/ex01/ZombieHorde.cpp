@@ -2,15 +2,12 @@
 
 Zombie* zombieHorde( int N, std::string name )
 {
-    // Zombie z(name);
-    Zombie *z_ptr = new Zombie[N];
+    Zombie *z_ptr = new Zombie [N];
 
     for (int i = 0; i < N; i++)
     {
+        z_ptr[i] = Zombie(name + (char)(48 + i));
         // TODO : give each object a name, - calling the parameterized constructor - or creating a setter in the class.
     }
-    name.length();
-    // z_ptr[0] = z;
-    // z_ptr[1] = z;
     return (z_ptr);
 }
