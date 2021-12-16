@@ -20,12 +20,3 @@ int main()
         jim.attack();
     }
 }
-
-// int main()
-// {
-//     // Weapon x;
-//     // x.setType("ak 45");
-//     // HumanA human(x, "mesoud");
-//     // human.attack();
-//     // return (0);
-// }   
