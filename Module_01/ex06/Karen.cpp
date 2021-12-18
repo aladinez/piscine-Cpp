@@ -1,12 +1,3 @@
-/* LINKS : 
-==> pointers to mem func :  https://isocpp.org/wiki/faq/pointers-to-members
-                        http://websites.umich.edu/~eecs381/handouts/Pointers_to_memberfuncs.pdf
-
-==> this pointer : https://www.geeksforgeeks.org/this-pointer-in-c/
-
-==> array of pointers to functions : https://docs.microsoft.com/en-us/troubleshoot/cpp/declare-pointers-to-functions
-*/
-
 #include "Karen.hpp"
 
 
@@ -37,11 +28,6 @@ void Karen::complain( std::string level )
 {
     std::string tab[4]= {"DEBUG", "INFO", "WARNING", "ERROR"};
     void (Karen::* fptr[4]) (void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
-    // void (Karen::* fptr[4]) (void);
-    // fptr[0] = &Karen::debug;
-    // fptr[1] = &Karen::info;
-    // fptr[2] = &Karen::warning;
-    // fptr[3] = &Karen::error;
 
     for (int i = 0; i < 4; i++)
     {
