@@ -3,11 +3,11 @@
 int main()
 {
     Fixed a;
-    Fixed b( a );
+    Fixed b(a);
     Fixed c;
 
     // TODO : add assignation operator overload.
-    // c = b;
+    c = b;
 
     std::cout << a.getRawBits() << std::endl;
     std::cout << b.getRawBits() << std::endl;

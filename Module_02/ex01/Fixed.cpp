@@ -15,6 +15,20 @@ Fixed::Fixed (const Fixed& fixed) : _fixedValue(fixed._fixedValue)
     std::cout << "Copy constructor called" << std::endl;
 }
 
+Fixed::Fixed (const int a)
+{
+    _fixedValue = (a << _fracBits);
+}
+
+Fixed::Fixed (const float f)
+{
+    _fixedValue = f * (1 << _fracBits);
+}
+
+
+
+
+
 Fixed& Fixed::operator = (const Fixed& fixed)
 {
     _fixedValue = fixed._fixedValue;
@@ -33,4 +47,9 @@ void Fixed::setRawBits( int const raw )
 {
     std::cout << "setRawBits member function called" << std::endl;
     _fixedValue = raw;
+}
+
+int Fixed::toInt( void ) const
+{
+    return (_fixedValue >> _fracBits);
 }
