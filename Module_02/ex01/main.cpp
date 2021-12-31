@@ -3,6 +3,8 @@
 int main()
 {
     Fixed b (42.42f);
-    std::cout << b.toInt() << std::endl;
+    float a(43.54f);
+    std::cout << b.toFloat() << std::endl;
+    std::cout << a << std::endl;
     return 0;
 }

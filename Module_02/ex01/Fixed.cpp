@@ -53,3 +53,8 @@ int Fixed::toInt( void ) const
 {
     return (_fixedValue >> _fracBits);
 }
+
+float Fixed::toFloat( void ) const
+{
+    return ((float)_fixedValue / (1 << _fracBits));
+}

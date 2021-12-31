@@ -5,7 +5,7 @@ class Fixed {
     private :
         int _fixedValue;
         static const int _fracBits = 8;
-       
+
     public :
         Fixed ();
         ~Fixed ();
@@ -16,6 +16,8 @@ class Fixed {
         int getRawBits( void ) const;
         void setRawBits( int const raw );
         int toInt( void ) const;
-        
+        float toFloat( void ) const;
+
+
 
 };
