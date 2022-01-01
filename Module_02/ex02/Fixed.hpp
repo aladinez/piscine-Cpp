@@ -3,6 +3,7 @@
 // ==== ==================== ====
 #include <iostream>
 #include <ostream>
+#include <cmath>
 
 class Fixed {
     private :
@@ -18,6 +19,10 @@ class Fixed {
 
         Fixed& operator = (const Fixed& fixed);
         Fixed operator + (const Fixed& fixed);
+        Fixed& operator ++ ();
+        Fixed operator ++ (int);
+        Fixed& operator -- ();
+        Fixed operator -- (int);
         Fixed operator - (const Fixed& fixed);
         Fixed operator * (const Fixed& fixed);
         Fixed operator / (const Fixed& fixed);
@@ -32,6 +37,11 @@ class Fixed {
         void setRawBits( int const raw );
         int toInt( void ) const;
         float toFloat( void ) const;
+        // a static member is related to the class only, independent on the object.
+        static Fixed& min(Fixed& f1, Fixed& f2);
+        static const Fixed& min(const Fixed& f1, const Fixed& f2);
+        static Fixed& max(Fixed& f1, Fixed& f2);
+        static const Fixed& max(const Fixed& f1, const Fixed& f2);
         
 
 };
