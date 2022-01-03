@@ -2,13 +2,17 @@
 
 class ClapTrap
 {
+    // TODO : orthodox class
     private:
         std::string _name;
         int _HitPoints;
         int _EnergyPoints;
         int _AttackDamage;
     public:
-        ClapTrap(std::string name);
+        ClapTrap();
+        ClapTrap(std::string);
+        ClapTrap(const ClapTrap& clap);
+        ClapTrap& operator = (const ClapTrap& clap);
         ~ClapTrap();
         void attack(std::string const & target);
         void takeDamage(unsigned int amount);

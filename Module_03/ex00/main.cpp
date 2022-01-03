@@ -2,7 +2,10 @@
 
 int main()
 {
+    ClapTrap a;
     ClapTrap clap("Peper");
+    ClapTrap b(clap);
+    a = b;
 
     clap.attack("robot");
     clap.takeDamage(9);
