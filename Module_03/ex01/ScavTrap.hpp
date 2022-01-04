@@ -3,7 +3,7 @@
 class ScavTrap : public ClapTrap
 {
 public:
-    ScavTrap(/* args */);
+    ScavTrap();
     ScavTrap(std::string name);
     ScavTrap(const ScavTrap& scav);
     ScavTrap& operator = (const ScavTrap& scav);
