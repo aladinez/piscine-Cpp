@@ -55,5 +55,5 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
     _EnergyPoints += amount;
-    std::cout << "ClapTrap " << _name << "got repaired, gaining " << amount << " of energy points !" << std::endl;
+    std::cout << "ClapTrap " << _name << " got repaired, gaining " << amount << " of energy points !" << std::endl;
 }
