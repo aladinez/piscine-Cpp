@@ -38,3 +38,8 @@ void ScavTrap::attack(std::string const & target)
     _HitPoints++;
     _AttackDamage++;
 }
+
+void ScavTrap::guardGate()
+{
+    std::cout << "ScavTrap " << _name << " have entered in Gate keeper mode" << std::endl;
+}

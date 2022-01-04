@@ -9,5 +9,12 @@ int main()
     ScavTrap b;
     b = a;
     b.attack("foo");
+    b = ScavTrap("newww");
+    b.attack("foo");
+     
+    b.guardGate();
+    a.guardGate();
+
+
     return 0;
 }

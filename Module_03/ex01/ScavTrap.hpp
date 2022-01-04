@@ -9,5 +9,5 @@ public:
     ScavTrap& operator = (const ScavTrap& scav);
     ~ScavTrap();
     void attack(std::string const & target);
-
+    void guardGate();
 };
