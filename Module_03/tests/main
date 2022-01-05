@@ -1,0 +1,39 @@
+#include <iostream>
+
+
+class base
+{
+private:
+    /* data */
+    int a;
+    int b;
+public:
+    virtual void print()
+    {
+        std::cout << "base print\n";
+    }
+};
+
+class derived : public base
+{
+private:
+    int c;
+public:
+    void print()
+    {
+        std::cout << "derived print\n";
+
+    }
+};
+
+
+int main ()
+{
+    derived d;
+    base b2;
+    base* b = &d;
+    std::cout << sizeof(*b);
+    d.print();
+    b->print();
+    return 0;
+}

@@ -1,3 +1,6 @@
+#ifndef _CLAP_HPP
+#define _CLAP_HPP
+
 #include <iostream>
 
 class ClapTrap
@@ -9,6 +12,7 @@ class ClapTrap
         int _EnergyPoints;
         int _AttackDamage;
     public:
+        // ClapTrap();
         ClapTrap(std::string, int hit=10, int energy=10, int attack=0);
         ClapTrap(const ClapTrap& clap);
         ClapTrap& operator = (const ClapTrap& clap);
@@ -17,3 +21,5 @@ class ClapTrap
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 };
+
+#endif
