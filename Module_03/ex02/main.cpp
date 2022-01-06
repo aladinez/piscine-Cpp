@@ -13,7 +13,7 @@ int main()
     b.attack("foo");
      
     b.highFivesGuys();
-
+    a.highFivesGuys();
 
     return 0;
 }

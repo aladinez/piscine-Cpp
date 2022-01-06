@@ -6,11 +6,6 @@ _name(name), _HitPoints(hit), _EnergyPoints(energy), _AttackDamage(attack)
     std::cout << "ClapTrap: Parameterized Constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap() :
-_name("ClapTrap"), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
-{
-    std::cout << "ClapTrap: Default Constructor called" << std::endl;
-}
 
 ClapTrap::ClapTrap(const ClapTrap& clap)
 {
