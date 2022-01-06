@@ -1,3 +1,5 @@
+// Links : https://www.learncpp.com/cpp-tutorial/virtual-functions/
+
 #ifndef _ANIMAL_HPP
 #define _ANIMAL_HPP
 #include <iostream>
@@ -10,11 +12,9 @@ public:
     Animal();
     Animal(const Animal& animal);
     Animal& operator = (const Animal& animal);
-    ~Animal();
+    virtual ~Animal();
     virtual void makeSound() const;
     std::string getType() const;
 };
-
-
 
 #endif
