@@ -8,10 +8,18 @@ Cat::Cat() : Animal("Cat"), _brain(new Brain())
 Cat::Cat (const Cat& cat) : Animal(cat)
 {
     std::cout << "Cat : Copy Constructor called" << std::endl;
+    delete _brain;
+    _brain = new Brain(*(cat._brain));
 }
 Cat& Cat::operator = (const Cat& cat)
 {
-    _type = cat._type;
+    std::cout << "Dog : Assignment operator overload called" << std::endl;
+    if (this != &cat)
+    {
+        _type = cat._type;
+        delete _brain;
+        _brain = new Brain(*(cat._brain));
+    }
     return *this;
 }
 
