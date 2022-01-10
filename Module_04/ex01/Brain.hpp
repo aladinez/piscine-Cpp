@@ -4,13 +4,13 @@
 
 class Brain
 {
-private:
-public:
-    std::string _ideas[100];
-    Brain();
-    Brain (const Brain&);
-    Brain& operator = (const Brain&);
-    ~Brain();
+    private:
+        std::string _ideas[100];
+    public:
+        Brain();
+        Brain (const Brain&);
+        Brain& operator = (const Brain&);
+        ~Brain();
 };
 
 

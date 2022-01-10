@@ -11,6 +11,7 @@ Cat::Cat (const Cat& cat) : Animal(cat)
 }
 Cat& Cat::operator = (const Cat& cat)
 {
+    std::cout << "Cat : Assignment operator overload called" << std::endl;
     _type = cat._type;
     return *this;
 }
