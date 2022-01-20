@@ -5,7 +5,7 @@ Cat::Cat() : Animal("Cat"), _brain(new Brain())
     std::cout << "Cat : Constructor called" << std::endl;
 }
 
-Cat::Cat (const Cat& cat) : Animal(cat)
+Cat::Cat (const Cat& cat) : Animal(cat), _brain(new Brain())
 {
     std::cout << "Cat : Copy Constructor called" << std::endl;
     delete _brain;

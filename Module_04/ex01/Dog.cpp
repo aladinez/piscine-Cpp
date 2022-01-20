@@ -5,10 +5,11 @@ Dog::Dog() : Animal("Dog"), _brain(new Brain())
     std::cout << "Dog : Constructor called" << std::endl;
 }
 
-Dog::Dog (const Dog& doggy) : Animal(doggy)
+Dog::Dog (const Dog& doggy) : Animal(doggy), _brain(new Brain())
 {
-    std::cout << "=======" << _brain << std::endl;
     std::cout << "Dog : Copy Constructor called" << std::endl;
+    // shallow copy
+    // _brain = doggy._brain;
     delete _brain;
     _brain = new Brain(*(doggy._brain));
 }
@@ -39,11 +40,11 @@ void Dog::makeSound() const
 void Dog::GetDog() const
 {
     std::cout << "_brain address : "<< _brain << std::endl;
-    std::cout << "_brain [0] value : "<< _brain->_ideas[0] << std::endl;
+    std::cout << "_brain [0] value : "<< _brain->GetBrain() << std::endl;
 }
 
-void Dog::SetDog(std::string text) const
+void Dog::SetDog(std::string text) 
 {
-    _brain->_ideas[0] = text;
+    _brain->SetBrain(text);
 }
 
