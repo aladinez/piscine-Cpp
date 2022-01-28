@@ -20,5 +20,4 @@ class Dog : public Animal
         void SetDog(std::string);
 };
 
-
 #endif

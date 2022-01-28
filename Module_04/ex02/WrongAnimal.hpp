@@ -1,5 +1,6 @@
 #ifndef _WRONG_HPP
 #define _WRONG_HPP
+
 #include <iostream>
 
 class WrongAnimal

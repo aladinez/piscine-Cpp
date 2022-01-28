@@ -15,6 +15,4 @@ class Brain
         void SetBrain(std::string);
 };
 
-
-
 #endif

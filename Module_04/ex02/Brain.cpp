@@ -33,4 +33,3 @@ void Brain::SetBrain(std::string text)
 {
     _ideas[0] = text; 
 }
-

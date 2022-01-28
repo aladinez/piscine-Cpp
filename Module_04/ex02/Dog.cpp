@@ -47,4 +47,3 @@ void Dog::SetDog(std::string text)
 {
     _brain->SetBrain(text);
 }
-

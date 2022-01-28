@@ -11,6 +11,7 @@ Cat::Cat (const Cat& cat) : Animal(cat), _brain(new Brain())
     delete _brain;
     _brain = new Brain(*(cat._brain));
 }
+
 Cat& Cat::operator = (const Cat& cat)
 {
     std::cout << "Cat : Assignment operator overload called" << std::endl;
