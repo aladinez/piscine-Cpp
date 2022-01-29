@@ -8,17 +8,60 @@ Character::Character(std::string name) : _name(name), _Scount(0), _Acount(0), _A
 
     address = new AMateria*[_Asize];
     for (int i = 0; i < 10; i++)
-    {
         address[i] = NULL;
-    }
 }
+
+Character::Character(const Character& c) : _name(c._name), _Scount(c._Scount), _Acount(0), _Asize(10)
+{
+    for (int i = 0; i < c._Scount; i++)
+        slot[i] = c.slot[i]->clone();
+
+    for (int i = _Scount; i < 4; i++)
+        slot[i] = NULL;
+
+    address = new AMateria*[_Asize];
+    for (int i = 0; i < 10; i++)
+        address[i] = NULL;
+}
+
+Character& Character::operator = (const Character& c)
+{
+    if (this != &c)
+    {
+        _name = c._name;
+        _Scount = c._Scount;
+        _Acount = 0;
+        _Asize = 10;
+
+        // delete all
+        for (int i = 0; i < 4; i++)
+        {
+            delete slot[i];
+            slot[i] = NULL;
+        }
+
+        for (int i = 0; address[i] != NULL; i++)
+            delete address[i];
+        delete [] address;
+
+        // replace slot
+        for (int i = 0; i < _Scount; i++)
+            slot[i] = c.slot[i]->clone();
+
+        // realloc for adresses to free
+        address = new AMateria*[_Asize];
+        for (int i = 0; i < 10; i++)
+            address[i] = NULL;
+    }
+    return *this;
+}
+
 
 Character::~Character()
 {
     for (int i = 0; i < 4; i++)
-    {
         delete slot[i];
-    }
+
     for (int i = 0; address[i] != NULL; i++)
         delete address[i];
     delete [] address;
@@ -32,8 +75,10 @@ std::string const & Character::getName() const
 void Character::equip(AMateria* m)
 {
     if (_Scount < 4)
+    {
         slot[_Scount] = m->clone();
-    _Scount++;
+        _Scount++;
+    }
 }
 
 
@@ -72,7 +117,14 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-    if (idx >= 0 && idx < 4)
+    if (idx >= 0 && idx < 4 && slot[idx] != NULL)
         slot[idx]->use(target);
+}
+#include <iostream>
+void Character::display()
+{
+    for(int i=0; i < 4; i++)
+        std::cout << &slot[i] << '|';
+    std::cout << '\n';
 }
 
