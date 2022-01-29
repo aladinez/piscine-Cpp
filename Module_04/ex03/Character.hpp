@@ -24,7 +24,6 @@ public:
     void unequip(int idx);
     void save_address(int idx);
     void use(int idx, ICharacter& target);
-    void display();
     ~Character();
 };
 

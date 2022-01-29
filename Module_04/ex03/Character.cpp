@@ -120,11 +120,4 @@ void Character::use(int idx, ICharacter& target)
     if (idx >= 0 && idx < 4 && slot[idx] != NULL)
         slot[idx]->use(target);
 }
-#include <iostream>
-void Character::display()
-{
-    for(int i=0; i < 4; i++)
-        std::cout << &slot[i] << '|';
-    std::cout << '\n';
-}
 
