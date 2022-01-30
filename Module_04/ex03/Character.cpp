@@ -73,7 +73,7 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-    if (_Scount < 4)
+    if (_Scount < 4 && m != NULL)
     {
         slot[_Scount] = m->clone();
         _Scount++;

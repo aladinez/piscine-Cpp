@@ -5,11 +5,11 @@ Cure::Cure() : AMateria("cure")
 {
 }
 
-Cure::Cure(const Cure& cure) : AMateria("cure")
+Cure::Cure(const Cure&) : AMateria("cure")
 {
 }
 
-Cure& Cure::operator = (const Cure& cure)
+Cure& Cure::operator = (const Cure&)
 {
     // While assigning a Materia to another, copying the type doesn’t make sense.
     return *this;

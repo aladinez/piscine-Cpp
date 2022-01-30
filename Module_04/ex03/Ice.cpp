@@ -5,11 +5,11 @@ Ice::Ice() : AMateria("ice")
 {
 }
 
-Ice::Ice(const Ice& ice) : AMateria("ice")
+Ice::Ice(const Ice& ) : AMateria("ice")
 {
 }
 
-Ice& Ice::operator = (const Ice& ice)
+Ice& Ice::operator = (const Ice& )
 {
     // While assigning a Materia to another, copying the type doesn’t make sense.
     return *this;

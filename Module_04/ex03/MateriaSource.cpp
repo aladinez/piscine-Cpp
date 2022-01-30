@@ -31,9 +31,8 @@ MateriaSource& MateriaSource::operator = (const MateriaSource& m)
 
 void MateriaSource::learnMateria(AMateria* m)
 {
-    if (_count < 4)
+    if (_count < 4 && m != NULL)
     {
-        // TO FIX: using clone causes memory leak
         slot[_count] = m->clone();
         _count++;
     }
@@ -41,7 +40,6 @@ void MateriaSource::learnMateria(AMateria* m)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-    int idx = _count;
     for (int i = _count - 1; i >= 0; i--)
     {
         if (slot[i]->getType() == type)
