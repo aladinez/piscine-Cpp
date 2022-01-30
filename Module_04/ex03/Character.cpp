@@ -1,6 +1,5 @@
 #include "Character.hpp"
 
-
 Character::Character(std::string name) : _name(name), _Scount(0), _Acount(0), _Asize(10)
 {
     for (int i = 0; i < 4; i++)

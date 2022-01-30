@@ -6,10 +6,14 @@
 class MateriaSource : public IMateriaSource
 {
     private:
-        /* data */
+        AMateria* slot[4];
+        int _count;
+
     public:
         MateriaSource(/* args */);
         ~MateriaSource();
+        MateriaSource(const MateriaSource& m);
+        MateriaSource& operator = (const MateriaSource& m);
 
 
         void learnMateria(AMateria*);
