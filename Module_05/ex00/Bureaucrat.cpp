@@ -1,5 +1,17 @@
 #include "Bureaucrat.hpp"
 
+// nested classes' member functions :
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return ("Grade Too High");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return ("Grade Too Low");
+}
+
+// member functions :
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
     std::cout << getName() << " : Constructor Called" << std::endl;
