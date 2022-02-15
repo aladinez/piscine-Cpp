@@ -1,3 +1,6 @@
+#ifndef _BUREAUCRAT_HPP
+#define _BUREAUCRAT_HPP
+
 #include <string>
 #include <exception>
 #include <iostream>
@@ -40,3 +43,4 @@ public:
 // solution : outside the class OR make it friend.
 std::ostream& operator << (std::ostream& os, const Bureaucrat& b);
 
+#endif
