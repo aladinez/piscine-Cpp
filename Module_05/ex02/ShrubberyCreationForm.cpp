@@ -14,6 +14,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& s)
 ShrubberyCreationForm& ShrubberyCreationForm::operator = (const ShrubberyCreationForm& s)
 {
     _target = s._target;
+    return *this;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()

@@ -33,6 +33,7 @@ public:
     void increment();
     void decrement();
     void signForm(Form& f);
+    void executeForm(Form const & form);
 };
 
 // operator takes only two params, putting it inside the class means that it has 3 : this, ostream, b
