@@ -7,7 +7,7 @@ SRC		= megaphone.cpp
 
 OBJ		= megaphone.o
 
-COMP	= clang++ -std=c++98 -Wextra -Werror -Wall
+COMP	= c++ -std=c++98 -Wextra -Werror -Wall
 
 all : $(NAME)
 
