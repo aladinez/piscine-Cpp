@@ -5,7 +5,7 @@ SRC		= Contact.cpp PhoneBook.cpp main.cpp
 
 OBJ		= Contact.o PhoneBook.o main.o
 
-COMP	= clang++ -std=c++98 -Wextra -Werror -Wall
+COMP	= c++ -std=c++98 -Wextra -Werror -Wall
 
 all : $(NAME)
 

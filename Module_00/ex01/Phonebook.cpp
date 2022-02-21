@@ -1,5 +1,7 @@
 #include "PhoneBook.hpp"
 
+PhoneBook::PhoneBook() : _contactID(0) {}
+
 std::string PhoneBook::turnc(std::string str)
 {
 	std::string str2 = str;

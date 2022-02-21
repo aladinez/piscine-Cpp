@@ -26,6 +26,11 @@ void    Contact::Contact::set_nickname()
 {
 	std::cout << "Nickname : ";
 	std::getline(std::cin, _nickname);
+	while (_nickname.empty())
+	{
+		std::cout << "Please enter a non-empty nickname : ";
+		std::getline(std::cin, _nickname);
+	}
 
 }
 
@@ -44,6 +49,11 @@ void    Contact::set_secret()
 {
 	std::cout << "Darkest secret : ";
 	std::getline(std::cin, _secret);
+	while (_secret.empty())
+	{
+		std::cout << "Please enter a non-empty secret : ";
+		std::getline(std::cin, _secret);
+	}
 }
 
 // Getters :

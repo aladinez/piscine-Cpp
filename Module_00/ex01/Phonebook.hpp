@@ -11,12 +11,11 @@ class PhoneBook {
 	private:
 		Contact		contact[8];
 		int			_contactID;
-		// int			_contactID;
 		std::string	turnc(std::string str);
 		void		show_contact();
 
 	public:
-		PhoneBook(): _contactID(0) {};
+		PhoneBook();
 		void	add_contact();
 		void	list_contacts();
 };
