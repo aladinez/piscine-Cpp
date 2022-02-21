@@ -1,3 +1,6 @@
+#ifndef _ZOMBIE_HPP
+#define _ZOMBIE_HPP
+
 #include <string>
 #include <iostream>
 
@@ -9,6 +12,7 @@ class Zombie {
         Zombie (std::string name);
         Zombie ();
         ~Zombie ();
+        // FOR TESTING :
         // Zombie& operator = (const Zombie& z)
         // {
         //     _name = z._name;
@@ -17,3 +21,5 @@ class Zombie {
         // }
         void announce(void);
 };
+
+#endif

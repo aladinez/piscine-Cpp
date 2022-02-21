@@ -8,5 +8,7 @@ int main()
     randomChump("MED");
     Zombie *zombie = newZombie("youssef");
     zombie->announce();
+    // do whatever ..
     delete zombie;
+    return (0);
 }

@@ -1,15 +1,16 @@
+
 #include "Weapon.hpp"
 
-Weapon::Weapon (std::string wp_type): type(wp_type)
+Weapon::Weapon (std::string type): _type(type)
 {
 } 
 
 const std::string& Weapon::getType() const
 {
-    return (type);
+    return (_type);
 }
 
-void    Weapon::setType(std::string weaponName)
+void    Weapon::setType(std::string type)
 {
-    type = weaponName;
+    _type = type;
 }

@@ -3,19 +3,22 @@
 
 int main()
 {
-    std::string my_string = "HI THIS IS BRAIN";
+    std::string str = "HI THIS IS BRAIN";
 
-    // pointer to my string
-    std::string* stringPTR = &my_string;
+    // pointer to str
+    std::string* stringPTR = &str;
 
-    std::string &stringREF =  my_string;
+    // reference to str
+    std::string &stringREF =  str;
 
     const std::string s = "test";
-    s += 'a';   
 
-    std::cout << "the adress of the string : " << &my_string << std::endl;
+    std::cout << "the adress of the string : " << &str << std::endl;
     std::cout << "the adress of the string using stringPTR: " << stringPTR << std::endl;
     std::cout << "the adress of the string using stringREF: " << &stringREF << std::endl;
-    std::cout << "display the string using stringPTR: " << *stringPTR << std::endl;
-    std::cout << "display the string using stringREF: " << stringREF << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "The value of the string variable: " << str << std::endl;
+    std::cout << "The value pointed to by stringPTR: " << *stringPTR << std::endl;
+    std::cout << "The value pointed to by stringREF: " << stringREF << std::endl;
 }

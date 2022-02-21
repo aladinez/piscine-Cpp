@@ -1,12 +1,12 @@
-#ifndef _WEAPON_
-#define _WEAPON_
+#ifndef _WEAPON_HPP
+#define _WEAPON_HPP
 
 #include <string>
 
 
 class Weapon {
     private : 
-        std::string type;
+        std::string _type;
     
     public : 
         Weapon (std::string);
