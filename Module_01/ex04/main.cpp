@@ -2,34 +2,32 @@
 #include <fstream>
 
 
+int error(const char *message)
+{
+    std::cerr << message << '\n';
+    return 1;
+}
+
+
 int main(int argc, char **argv)
 {
     if (argc != 4)
-    {
-        std::cout << "Error : arguments." << std::endl;
-        return (0);
-    }
-    std::string line;
-    std::string filename(argv[1]);
-    std::ifstream myfile;
-    std::ofstream newfile;
-    //==== works if compiled with c++11 : open takes const char * as parameter. ====
-    myfile.open(filename);
-    // TODO : do not open newfile if myfile is not oppened.
-    newfile.open(filename + ".replaced");
-    //==============================================================================
-    std::size_t found;
-
-    // there is a constructor in string class that takes char * as a parameter.
+        return error("Error : arguments.");
     std::string s1(argv[2]);
     std::string s2(argv[3]);
+
     if (s1.empty() || s2.empty())
+        return error("Error : s1 or s2 is empty." );
+
+    std::ifstream myfile(argv[1]);
+    if (myfile.is_open())
     {
-        std::cout << "Error : s1 or s2 is empty." << std::endl;
-        return 0;
-    }
-    if (myfile.is_open() && newfile.is_open())
-    {
+        std::ofstream newfile(std::string(argv[1]) + ".replaced");
+        if (!newfile.is_open())
+            return error("Error : outfile corrupted" );
+
+        std::string line;
+        std::size_t found;
         while ( getline (myfile,line) )
         {
             found = line.find(s1);
@@ -37,14 +35,14 @@ int main(int argc, char **argv)
             {
                 line.erase(found, s1.length());
                 line.insert(found, s2);
-                found = line.find(s1, found + s1.length() - 1);
+                found = line.find(s1, found + s2.length());
             }
-            newfile << line;
+            newfile << line << '\n';
         }
         myfile.close();
         newfile.close();
     }
     else
-        std::cout << "Error : File corrupted." << std::endl;
+        return error("Error : File corrupted.");
     return (0);
 }
