@@ -1,5 +1,8 @@
 #include "Zombie.hpp"
 
+Zombie::Zombie (){
+    std::cout << "default Constructor Called" << std::endl;
+}
 
 Zombie::Zombie (std::string name){
     std::cout << "Constructor Called" << std::endl;
