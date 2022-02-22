@@ -14,7 +14,7 @@ int main(int ac, char **av)
     if (ac != 2)
     {
         std::cout << "Error : arguments." << std::endl;
-        return 0;
+        return 1;
     }
     Karen krn;
     switch (findIndex(av[1]))

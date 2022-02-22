@@ -1,3 +1,6 @@
+#ifndef _KAREN_HPP
+#define _KAREN_HPP
+
 #include <iostream>
 #include <string>
 
@@ -11,3 +14,5 @@ class Karen {
     public :
         void complain( std::string level );
 };
+
+#endif
