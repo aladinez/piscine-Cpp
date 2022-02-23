@@ -1,5 +1,7 @@
-#include <iostream>
+#ifndef _FIXED_HPP
+#define _FIXED_HPP
 
+#include <iostream>
 
 class Fixed {
     private :
@@ -16,3 +18,5 @@ class Fixed {
         
 
 };
+
+#endif

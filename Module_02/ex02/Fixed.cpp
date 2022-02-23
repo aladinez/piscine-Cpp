@@ -143,13 +143,13 @@ float Fixed::toFloat( void ) const
     return ((float)_fixedValue / (1 << _fracBits));
 }
 
-Fixed& Fixed::operator ++ ()
+Fixed& Fixed::operator ++ () // prefix
 {
     this->_fixedValue++;
     return (*this);
 }
 
-Fixed Fixed::operator ++ (int)
+Fixed Fixed::operator ++ (int) //postfix
 {
     Fixed fx(*this);
     this->_fixedValue++;
@@ -194,6 +194,7 @@ Fixed& Fixed::max(Fixed& f1, Fixed& f2)
 
 const Fixed& Fixed::max(const Fixed& f1, const Fixed& f2)
 {
+    std::cout << "const" << "\n";
     if (f1 > f2)
         return (f1);
     return (f2);

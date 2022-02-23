@@ -1,8 +1,12 @@
 // ==== operator overloading ====
 // link : http://websites.umich.edu/~eecs381/generalFAQ/Operator_Overloading.html
 // ==== ==================== ====
+#ifndef _FIXED_HPP
+#define _FIXED_HPP
+
 #include <iostream>
 #include <ostream>
+#include <cmath>
 
 class Fixed {
     private :
@@ -24,3 +28,5 @@ class Fixed {
 
 };
 std::ostream& operator << (std::ostream& os, const Fixed& fixed);
+
+#endif

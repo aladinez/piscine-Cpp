@@ -1,6 +1,9 @@
 // ==== operator overloading ====
 // link : http://websites.umich.edu/~eecs381/generalFAQ/Operator_Overloading.html
 // ==== ==================== ====
+#ifndef _FIXED_HPP
+#define _FIXED_HPP
+
 #include <iostream>
 #include <ostream>
 #include <cmath>
@@ -19,8 +22,8 @@ class Fixed {
 
         Fixed& operator = (const Fixed& fixed);
         Fixed operator + (const Fixed& fixed);
-        Fixed& operator ++ ();
-        Fixed operator ++ (int);
+        Fixed& operator ++ (); // prefix
+        Fixed operator ++ (int);  //postfix
         Fixed& operator -- ();
         Fixed operator -- (int);
         Fixed operator - (const Fixed& fixed);
@@ -33,6 +36,7 @@ class Fixed {
         bool operator <= (const Fixed& fixed) const;
         bool operator == (const Fixed& fixed) const;
         bool operator != (const Fixed& fixed) const;
+        
         int getRawBits( void ) const;
         void setRawBits( int const raw );
         int toInt( void ) const;
@@ -46,3 +50,5 @@ class Fixed {
 
 };
 std::ostream& operator << (std::ostream& os, const Fixed& fixed);
+
+#endif

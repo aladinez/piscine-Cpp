@@ -6,7 +6,6 @@ int main()
     Fixed b(a);
     Fixed c;
 
-    // TODO : add assignation operator overload.
     c = b;
 
     std::cout << a.getRawBits() << std::endl;
