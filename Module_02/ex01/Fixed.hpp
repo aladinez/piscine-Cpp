@@ -1,5 +1,6 @@
 // ==== operator overloading ====
 // link : http://websites.umich.edu/~eecs381/generalFAQ/Operator_Overloading.html
+// bit-shift : https://stackoverflow.com/questions/141525/what-are-bitwise-shift-bit-shift-operators-and-how-do-they-work
 // ==== ==================== ====
 #ifndef _FIXED_HPP
 #define _FIXED_HPP
