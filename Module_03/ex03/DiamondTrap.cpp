@@ -2,7 +2,7 @@
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name", 100, 50, 30), ScavTrap(), FragTrap(), _name(name)
 {
-    std::cout << "DiamondTrap : Constructor with called" << std::endl;
+    std::cout << "DiamondTrap : Constructor called" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()

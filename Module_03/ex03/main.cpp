@@ -3,11 +3,19 @@
 int main()
 {
     DiamondTrap D("wahd");
-    DiamondTrap C(D);
-    C.attack("juj");
+    std::cout << std::endl;
 
-    // TODO : remove default cons from frag and scav in ex01 02,
-    //        construct claptrap in scav/frag copy assignment.
+    DiamondTrap C(D);
+    std::cout << std::endl;
+
+    C.attack("juj");
+    std::cout << std::endl;
+
+    C.beRepaired(50);
+    std::cout << std::endl;
+
+    C.whoAmI();
+    std::cout << std::endl;
 
     return 0;
 }

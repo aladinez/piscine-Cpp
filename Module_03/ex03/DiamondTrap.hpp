@@ -1,8 +1,8 @@
 #ifndef _DIAMOND_HPP
 #define _DIAMOND_HPP
 
-#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 
 class DiamondTrap : public ScavTrap, public FragTrap
