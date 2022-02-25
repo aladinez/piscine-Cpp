@@ -1,3 +1,6 @@
+#ifndef _FRAG_HPP
+#define _FRAG_HPP
+
 #include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap
@@ -11,3 +14,5 @@ public:
     void attack(std::string const & target);
     void highFivesGuys(void);
 };
+
+#endif
