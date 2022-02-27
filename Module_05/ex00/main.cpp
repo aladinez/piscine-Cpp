@@ -6,7 +6,7 @@ int main()
 {
     try
     {
-        Bureaucrat("foo", -200);
+        // Bureaucrat("foo", -200);
         Bureaucrat a("bar", 100);
         Bureaucrat b = a;
         b.decrement();
