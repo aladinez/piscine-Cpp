@@ -5,13 +5,13 @@ Dog::Dog() : Animal("Dog"), _brain(new Brain())
     std::cout << "Dog : Constructor called" << std::endl;
 }
 
-Dog::Dog (const Dog& doggy) : Animal(doggy), _brain(new Brain())
+Dog::Dog (const Dog& doggy) : Animal(doggy), _brain(new Brain(*(doggy._brain)))
 {
     std::cout << "Dog : Copy Constructor called" << std::endl;
     // shallow copy
     // _brain = doggy._brain;
-    delete _brain;
-    _brain = new Brain(*(doggy._brain));
+    // delete _brain;
+    // _brain = new Brain(*(doggy._brain));
 }
 
 Dog& Dog::operator = (const Dog& doggy)

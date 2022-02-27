@@ -6,13 +6,13 @@
 
 int main()
 {
-    Animal *anims[50];
-    for (int i = 0; i < 25; i++)
+    Animal *anims[4];
+    for (int i = 0; i < 2; i++)
         anims[i] = new Dog();
-    for (int i = 25; i < 50; i++)
+    for (int i = 2; i < 4; i++)
         anims[i] = new Cat();
     
-    for (int i = 0; i < 50; i++)
+    for (int i = 0; i < 4; i++)
         delete anims[i];
 
 
@@ -28,6 +28,15 @@ int main()
     b.GetDog();
 
 
+
+    //-----------LEAKS------------//
+    // const Animal* j = new Dog();
+    // const Animal* i = new Cat();
+    // delete j;//should not create a leak
+    // delete i;
+
+    // while (1)
+    //     ;
 
 
 
