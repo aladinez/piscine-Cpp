@@ -9,9 +9,9 @@ int main()
     try
     {
         // ShrubberyCreationForm  f("formaa");
-        // RobotomyRequestForm  f("formaa");
-        PresidentialPardonForm  f("formaa");
-        Bureaucrat b("FOO", 10);
+        RobotomyRequestForm  f("formaa");
+        // PresidentialPardonForm  f("formaa");
+        Bureaucrat b("FOO", 1);
         std::cout << f;
         f.beSigned(b);
         // b.signForm(f);
