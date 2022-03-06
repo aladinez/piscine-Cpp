@@ -1,12 +1,23 @@
-#include "test.hpp"
 #include <iostream>
-int A::h = 0;
+
+template <typename T>
+T max(T x, T y)
+{
+    std::cout << "called max<int>(int, int)\n";
+    return (x > y) ? x : y;
+}
+
+int max(int x, int y)
+{
+    std::cout << "called max(int, int)\n";
+    return (x > y) ? x : y;
+}
+
 int main()
 {
-	A f;
-	std::cout << &f.a << std::endl;
-	std::cout << &f.b - &f.a << " diff" << std::endl;
-	std::cout << &f.b << std::endl;
-	std::cout << &f.a - &A::h<< std::endl;
+    std::cout << max<int>(1, 2) << '\n'; // selects max<int>(int, int)
+    std::cout << max<>(1, 2) << '\n';    // deduces max<int>(int, int) (non-template functions not considered)
+    std::cout << max(1, 2) << '\n';      // calls function max(int, int)
 
+    return 0;
 }
