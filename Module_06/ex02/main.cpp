@@ -35,8 +35,6 @@ void identify(Base* p)
         std::cout << "B" << std::endl;
     else if(c != 0)
         std::cout << "C" << std::endl;
-    else
-        std::cout << "Type not found" << std::endl;
 }
 
 void identify(Base& p)
@@ -65,7 +63,6 @@ void identify(Base& p)
             }
             catch(const std::exception& e)
             {
-                std::cout << "Type not found" << std::endl;
             }
         }
     }
@@ -77,7 +74,5 @@ int main()
     identify(p);
     std::cout << "---" << std::endl;
     identify(*p);
-    while (1)
-        ;
     return 0;
 }
