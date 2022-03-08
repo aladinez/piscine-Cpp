@@ -3,23 +3,24 @@
 #include <stack>
 
 
-template <class T>
+template <typename T>
 class MutantStack : public std::stack<T>
 {
-private:
-    /* data */
 public:
-    typedef std::stack<T>::c    iterator;
+    typedef typename std::stack<T>::container_type::iterator    iterator;
 
-    auto begin() { return std::begin(c); }
-    auto end() { return std::end(c); }
+    iterator begin();
+    iterator end();
 
-    MutantStack(/* args */);
+    MutantStack();
+    MutantStack(const MutantStack& other);
+    MutantStack& operator = (const MutantStack& other);
+
     ~MutantStack();
 };
 
 template <class T>
-MutantStack<T>::MutantStack(/* args */)
+MutantStack<T>::MutantStack()
 {
 }
 
@@ -27,6 +28,33 @@ template <class T>
 MutantStack<T>::~MutantStack()
 {
 }
+
+template <class T>
+MutantStack<T>::MutantStack(const MutantStack& other)
+{
+    *this = other;
+}
+
+template <class T>
+MutantStack<T>& MutantStack<T>::operator = (const MutantStack& other)
+{
+    this->c = other.c;
+    return *this;
+}
+
+
+template <class T>
+typename MutantStack<T>::iterator MutantStack<T>::begin()
+{
+    return this->c.begin();
+}
+
+template <class T>
+typename MutantStack<T>::iterator MutantStack<T>::end()
+{
+    return this->c.end();
+}
+
 
 
 #endif
